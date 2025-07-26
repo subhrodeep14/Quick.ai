@@ -9,11 +9,16 @@ import RemoveObject from "./pages/Removeobject"
 import BlogTitles from "./pages/BlogTitles"
 import RemoveBackground from "./pages/RemoveBackground"
 import Community from "./pages/Community"
+import { useAuth } from "@clerk/clerk-react"
+import { useEffect } from "react"
 
 
 function App() {
- 
 
+const { getToken} = useAuth();
+useEffect(()=>{
+  getToken().then((token)=>console.log(token));
+  },[]);
   return (
     <div>
       <Routes>
