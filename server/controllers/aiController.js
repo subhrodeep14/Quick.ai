@@ -159,7 +159,7 @@ export const generateImage = async (req, res) => {
 export const generateImageBackground = async (req, res) => {
     try {
         const { userId } = req.auth();
-        const { image } = req.file;
+        const  image  = req.file;
         const plan = req.plan;
 
 
@@ -198,7 +198,7 @@ export const generateImageObject = async (req, res) => {
     try {
         const { userId } = req.auth();
         const {object}=req.body;
-        const { image } = req.file;
+        const  image  = req.file;
         const plan = req.plan;
 
 

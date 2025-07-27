@@ -23,7 +23,7 @@ const BlogTitles = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      const prompt=`Generate a blog title for the keyword ${input} in the category ${selectedCategory}`
+      const prompt=`Generate a blog title for the keyword ${inputValue} in the category ${selectedCategory}`
 
       const {data}=await axios.post('/api/ai/generate-blog-title', {prompt},
         {headers:{Authorization:`Bearer ${await getToken()}`}}
@@ -37,6 +37,7 @@ const BlogTitles = () => {
     } catch (error) {
        toast.error(data.message)
     }
+    setLoading(false)
   }
   return (
     <div className='h-full overflow-y-scroll p-6 flex items-start flex-wrap gap-4 text-slate-700'>

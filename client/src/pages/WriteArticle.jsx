@@ -14,7 +14,7 @@ const WriteArticle = () => {
     {length: 1600, text: 'Long (1500+ words)'},
   ]
 
-  const [selectedLength, setSelectedLength] = React.useState(articleLength[0]);
+  const [selectedLength, setSelectedLength] = useState(articleLength[0]);
   const [inputValue, setInputValue] = useState('');
   const [loading,setLoading]=useState(false)
   const [content,setContent]=useState('')
@@ -26,9 +26,9 @@ const WriteArticle = () => {
 
     try {
       setLoading(true)
-      const prompt=`Write an article about ${input} in ${selectedLength.text}`
+      const prompt=`Write an article about ${inputValue} in ${selectedLength.text}`
 
-      const {data}=await axios.post('api/ai/generate-article',{prompt,length:selectedLength.length},{
+      const { data }=await axios.post('/api/ai/generate-article',{prompt,length:selectedLength.length},{
         headers:{Authorization:`Bearer ${await getToken()}`}
       })
       if(data.success){
