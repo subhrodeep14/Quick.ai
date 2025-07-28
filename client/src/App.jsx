@@ -5,12 +5,11 @@ import Dashboard from "./pages/Dashboard"
 import WriteArticle from "./pages/WriteArticle"
 import ReviewResume from "./pages/ReviewResume"
 import GenerateImages from "./pages/GenerateImages"
-import RemoveObject from "./pages/Removeobject"
+import RemoveObject from "./pages/RemoveObject"
 import BlogTitles from "./pages/BlogTitles"
 import RemoveBackground from "./pages/RemoveBackground"
 import Community from "./pages/Community"
-import { useAuth } from "@clerk/clerk-react"
-import { useEffect } from "react"
+
 import {Toaster} from 'react-hot-toast'
 
 
